@@ -1,0 +1,1444 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background: #131514;
+}
+
+p{
+  font-family: 'Roboto',sans-serif;
+  color:#fff;
+}
+
+#h3-paragraphe2, #h2-paragraphe1, #h3-paragraphe3, #h3-paragraphe5{
+  font-family: 'Montserrat', sans-serif;
+}
+
+#h2-paragraphe1{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  height:100%;
+  grid-template-columns: 3.125% 3.125% 6.25% 4.375% 3.125% 5% 15% 10% 10% 15% 5% 3.125% 4.375% 6.25% 3.125% 3.125%;
+  grid-template-rows: 6.1% 18.9% 8.3% 16.7% 16.7% 8.3% 18.9% 6.1%;
+}
+
+.wrapper2 {
+  display: grid;
+  height:100%;
+  grid-template-columns: 7.1% 4.9% 3.6% 5.9% 17.2% 11.3% 11.3% 17.2% 5.9% 3.6% 4.9% 7.1% ;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.loader {
+  transition: 0.2s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 1000;
+  opacity: 1;
+}
+.loader--hide {
+  opacity: 0;
+}
+.loader__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  left: 25%;
+  width: 75%;
+  height: 100vh;
+}
+.loader__content {
+  color: #4D94F2;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  font-family:'VT323', monospace;
+  font-size: 24px;
+}
+
+
+/**** BG GRID ****/
+
+#bg_grid {
+  top: 0;
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  }
+
+  #bg_grid2 {
+    top: 0;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    }
+
+#bg_grid .box {
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+    border-right: 1px solid white;
+  }
+
+#bg_grid2 .box {
+        color: #fff;
+        font-family: sans-serif;
+        text-align: center;
+  }
+
+
+    /*** IMG SLIDER ***/
+
+    #title-box{
+      position: relative;
+      z-index: 10;
+    }
+
+    .text{
+      position:absolute;
+      z-index:50;
+      margin-left:10%;
+      margin-right: 25%;
+    }
+
+    #title-box img{
+    top:50%;
+    left:39.25%;
+    width: 55%;
+    max-height: 332px;
+    box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+    z-index: 12;
+    position: relative;
+    transform: translate(0%,-50%);
+    }
+
+  .lien-musique a{
+      color: #4E98F9;
+      font-size:16px;
+      font-weight: bold;
+    }
+
+
+
+
+
+
+@media screen and (min-width: 960px){
+
+  .wrapper .rectb1{
+    z-index: 33;
+    border-top: 2px solid #4E98F9;
+    border-right: 2px solid #4E98F9;
+    border-bottom: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 1 / span 7;
+    grid-row: 2 / span 2;
+    color:#fff;
+  }
+
+  .wrapper .rectb2{
+    z-index: 32;
+    border-top: 2px solid #4E98F9;
+    box-shadow: 0 -4px 4px -3px #4E98F9;
+    border-radius: 0px;
+    grid-column: 11 / span 1;
+    grid-row: 2 / span 1;
+    color:#fff;
+  }
+
+  /* header */
+
+  #logo{
+    grid-column: 3 / span 2;
+    margin-top: 70px;
+    margin-bottom: 90px;
+    grid-row: 1 / span 1;
+    z-index: 99;
+  }
+
+  .button-teleporter{
+    width:16.875%;
+    background-color:#212123;
+    height:6.1%;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index: 999;
+  }
+
+  .button-teleporter a{
+    position: absolute;
+    font-size: 18px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:#4E98F9;
+    text-decoration: none;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .button-teleporter:hover{
+    background-color: #4E98F9;
+    box-shadow: 0 0 40px 0 #4E98F9;
+  }
+
+  .button-teleporter a:hover{
+    color:#fff;
+  }
+
+  .container{
+    z-index: 99;
+    grid-column: 4 / span 10;
+  }
+
+  #title-container{
+    grid-row: 2 / span 1;
+  }
+
+  #title-box{
+    height: 400px;
+    box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+    background: #131514;
+  }
+
+  #title-box .placeholder-img{
+    background: url(../img/musique-daftpunk2.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    width: 53%;
+    height: 76%;
+    right: 5.75%;
+    transform: translateY(-50%);
+    max-width: 65%;
+    box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+    overflow-x: hidden;
+  }
+
+  h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: 0.44px;
+    padding-top: 12vh;
+  }
+
+  #texte-soust{
+    padding-right: 10vw;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    line-height: 150%;
+    font-weight: 300;
+    margin-top: 40px;
+  }
+
+
+
+  /*article*/
+
+  article{
+    grid-column: 3 / span 12;
+    grid-row:2 / span 1;
+    background: #212123;
+    font-family: 'Roboto',sans-serif;
+    margin-top:40vh;
+    z-index: 1;
+  }
+
+   /*ligne 1 */
+
+  .paragraphe1{
+    grid-column: 3 / span 4;
+    grid-row: 1 / span 1;
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    margin-top:28vh;
+  }
+
+  #h2-paragraphe1{
+    font-size: 26px;
+    color: #E9EFF4;
+    letter-spacing: 1.05px;
+    line-height: 150%;
+    margin-bottom:80px;
+  }
+
+  .wrapper2 .box1{
+    z-index: 33;
+    border: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 8/ span 2;
+    grid-row: 1 / span 1;
+    height:250px;
+    margin-top: 22vh;
+    margin-left: 10vw;
+    color:#fff;
+  }
+
+  .wrapper2 .box2{
+    z-index: 22;
+    background: url(../img/musique-wendy.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px;
+    grid-column: 7/ span 2;
+    grid-row: 1 / span 1;
+    height:276px;
+    margin-top: 27vh;
+    color:#fff;
+    margin-left: 72px;
+  }
+
+  /*ligne 2 */
+
+  .wrapper2 .box3{
+    z-index: 55;
+    border: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 4/ span 1;
+    grid-row: 2 / span 1;
+    height:300px;
+    margin-top: 15vh;
+    color:#fff;
+  }
+
+  .wrapper2 .box4{
+    z-index: 44;
+    background-color:#121413;
+    border-radius: 0px;
+    grid-column: 3/ span 4;
+    grid-row: 2 / span 1;
+    height:32px;
+    margin-top: 39vh;
+    color:#fff;
+  }
+
+  .wrapper2 .paragraphe2{
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    grid-column: 8 / span 3;
+    grid-row: 2 / span 1;
+    margin-top: 15vh;
+  }
+
+  #h3-paragraphe2{
+    font-size: 18px;
+    color: #E9EFF4;
+    letter-spacing: 0.8px;
+    line-height: 150%;
+    margin-bottom:30px;
+  }
+
+
+  /*ligne 3 */
+
+  .wrapper2 .box5 {
+    z-index: 55;
+    border-radius: 0px;
+    grid-column: 6/ span 7;
+    grid-row: 2 / span 1;
+    height:50vh;
+    color:#fff;
+    background: url(../img/musique-daftpunk.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .wrapper2 .paragraphe3{
+    z-index: 66;
+    grid-column: 3 / span 3;
+    grid-row: 2 / span 1;
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    margin-right:8vw;
+    margin-top:10vh;
+  }
+
+  #h3-paragraphe3{
+    font-size: 18px;
+    color: #E9EFF4;
+    letter-spacing: 0.8px;
+    line-height: 150%;
+    margin-bottom:30px;
+  }
+
+  /*ligne 4 */
+
+  .wrapper2 .box6{
+    background: url(../img/musique-wendy-header.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px;
+    grid-column: 3/ span 4;
+    grid-row: 3 / span 1;
+    height:70vh;
+    color:#fff;
+    margin-top: 10vh;
+  }
+
+  .wrapper2 .box7{
+    background-color:#121413;
+    border-radius: 0px;
+    grid-column: 8/ span 1;
+    grid-row: 3 / span 1;
+    height:30px;
+    color:#fff;
+    margin-top:32vh;
+  }
+
+  .wrapper2 .paragraphe4{
+    grid-column: 8 / span 1;
+    grid-row: 3 / span 1;
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    margin-top:45vh;
+  }
+
+  .wrapper2 .box8{
+    border: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 10/ span 1;
+    grid-row: 3 / span 1;
+    height:90vh;
+    color:#fff;
+  }
+
+
+  /*ligne 5 */
+
+  .wrapper2 .paragraphe5{
+    grid-column: 3 / span 3;
+    grid-row: 4 / span 1;
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    margin-top:17vh;
+    margin-bottom: 27vh;
+  }
+
+  #h3-paragraphe5{
+    font-size: 18px;
+    color: #E9EFF4;
+    letter-spacing: 0.8px;
+    line-height: 150%;
+    margin-bottom:50px;
+  }
+
+  .wrapper2 .box9{
+    border: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 3/ span 2;
+    grid-row: 4 / span 1;
+    height:8vh;
+    color:#fff;
+    margin-top: 45vh;
+    margin-bottom:25vh;
+  }
+
+  .wrapper2 .box10{
+    grid-column: 7 / span 4;
+    grid-row: 4 / span 1;
+    background-color:#555555;
+    height:8vh;
+    color:#fff;
+    height:40vh;
+    margin-top:17vh;
+  }
+
+
+  /*footer */
+
+  #bottom-box-container{
+    grid-row:3 / span 1;
+    margin-top: 28vh;
+    position: relative;
+    margin-bottom: 100px;
+  }
+
+  #bottom-box{
+    height: 250px;
+    background: #131514;
+    box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+    padding-left:7.5vw;
+    padding-top: 7vh;
+  }
+
+  #suivant-bottom{
+    font-family: 'Roboto',sans-serif;
+    color:#fff;
+    font-size: 12px;
+    margin-bottom: 35px;
+    letter-spacing: 0.6pt;
+  }
+
+  #article_suivant{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: 0.44px;
+
+  }
+
+  #CTA_Lire{
+    color:#4E98F9;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color:#4E98F9;
+    border:2px solid #4E98F9;
+    height:44px;
+    width:200px;
+    bottom:0;
+    right:0;
+    position: absolute;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    margin-bottom:7vh;
+    margin-right: 11vh;
+    text-decoration:none;
+    align-items: center;
+    display: flex;
+    padding-left:30px;
+    letter-spacing: 0.6px;
+  }
+
+  #CTA_Lire:hover{
+      color:white;
+      font-family: 'Roboto', sans-serif;
+      border:2px solid #4E98F9;
+      height:44px;
+      width:200px;
+      bottom:0;
+      right:0;
+      position: absolute;
+      box-shadow: 0 0 4px 0 #4E98F9;
+      margin-bottom:7vh;
+      margin-right: 11vh;
+      text-decoration:none;
+      align-items: center;
+      display: flex;
+      padding-left:30px;
+      background-color: #4E98F9;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:959px) and (min-width:481px){
+
+  .wrapper .rectb1{
+    z-index: 33;
+    border-top: 2px solid #4E98F9;
+    border-right: 2px solid #4E98F9;
+    border-bottom: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 1 / span 7;
+    grid-row: 2 / span 2;
+    color:#fff;
+  }
+
+  .wrapper .rectb2{
+    z-index: 32;
+    border-top: 2px solid #4E98F9;
+    box-shadow: 0 -4px 4px -3px #4E98F9;
+    border-radius: 0px;
+    grid-column: 11 / span 1;
+    grid-row: 2 / span 1;
+    color:#fff;
+  }
+
+  /* header */
+
+  .button-teleporter{
+    width:16.875%;
+    background-color:#212123;
+    height:6.1%;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index: 999;
+  }
+
+  .button-teleporter a{
+    position: absolute;
+    font-size: 18px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:#4E98F9;
+    text-decoration: none;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+    .button-teleporter:hover{
+      background-color: #4E98F9;
+      box-shadow: 0 0 40px 0 #4E98F9;
+    }
+
+    .button-teleporter a:hover{
+      color:#fff;
+    }
+
+  #logo{
+    grid-column: 3 / span 2;
+    margin-top: 70px;
+    margin-bottom: 90px;
+    grid-row: 1 / span 1;
+    z-index: 99;
+  }
+
+  .container{
+    z-index: 99;
+    grid-column: 5 / span 8;
+  }
+
+  #title-container{
+    grid-row: 2 / span 1;
+  }
+
+  #title-box{
+    height: 80vh;
+    background: #131514;
+    box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+  }
+
+    #title-box .placeholder-img{
+      background: url(../img/musique-daftpunk2.jpeg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 55%;
+      width: 55%;
+      height: 76%;
+      right: -6.25%;
+      transform: translateY(-50%);
+      max-width: 65%;
+      box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+      overflow-x: hidden;
+    }
+
+  h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: 0.44px;
+    padding-left:1.8vw;
+    padding-top: 10vh;
+    line-height: 140%;
+  }
+
+  #texte-soust{
+    padding-left:1.8vw;
+    padding-right: 10vw;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    line-height: 150%;
+    font-weight: 300;
+    margin-top: 40px;
+  }
+
+
+
+  /*article*/
+
+  article{
+    grid-column: 3 / span 12;
+    grid-row:2 / span 1;
+    background: #212123;
+    font-family: 'Roboto',sans-serif;
+    margin-top:72vh;
+    z-index: 1;
+  }
+
+   /*ligne 1 */
+
+  .wrapper2 .paragraphe1{
+    grid-column: 2 / span 6;
+    grid-row: 1 / span 1;
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    margin-top:28vh;
+  }
+
+  #h2-paragraphe1{
+    font-size: 30px;
+    color: #E9EFF4;
+    letter-spacing: 1.05px;
+    line-height: 140%;
+    margin-bottom:40px;
+  }
+
+  .wrapper2 .box1{
+    z-index: 3;
+    border: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 8/ span 3;
+    grid-row: 1 / span 1;
+    height:250px;
+    margin-top: 15vh;
+    margin-left: 10vw;
+    color:#fff;
+  }
+
+  .wrapper2 .box2{
+    z-index: 2;
+    background: url(../img/musique-wendy.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px;
+    grid-column: 8/ span 1;
+    grid-row: 1 / span 1;
+    height:129px;
+    margin-top: 20vh;
+    color:#fff;
+  }
+
+  /*ligne 2 */
+
+  .wrapper2 .box3{
+    z-index: 5;
+    border: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 4/ span 1;
+    grid-row: 2 / span 1;
+    height:300px;
+    color:#fff;
+  }
+
+  .wrapper2 .box4{
+    z-index: 4;
+    background-color:#121413;
+    border-radius: 0px;
+    grid-column: 3/ span 6;
+    grid-row: 2 / span 1;
+    height:45px;
+    margin-top: 5vh;
+    color:#fff;
+  }
+
+  .wrapper2 .paragraphe2{
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    grid-column: 7 / span 4;
+    grid-row: 2 / span 1;
+    margin-top: 15vh;
+  }
+
+  #h3-paragraphe2{
+    font-size: 18px;
+    color: #E9EFF4;
+    letter-spacing: 0.8px;
+    line-height: 150%;
+    margin-bottom:30px;
+  }
+
+
+  /*ligne 3 */
+
+  .wrapper2 .box5{
+    z-index: 5;
+    background: url(../img/musique-daftpunk.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px;
+    grid-column: 4/ span 10;
+    grid-row: 2 / span 1;
+    height:30vh;
+    color:#fff;
+  }
+
+  .wrapper2 .paragraphe3{
+    z-index: 6;
+    grid-column: 2 / span 7;
+    grid-row: 2 / span 1;
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    margin-right:8vw;
+    margin-top:36vh;
+  }
+
+  #h3-paragraphe3{
+    font-size: 18px;
+    color: #E9EFF4;
+    letter-spacing: 0.8px;
+    line-height: 150%;
+    margin-bottom:30px;
+  }
+
+  /*ligne 4 */
+
+  .wrapper2 .box6{
+    background: url(../img/musique-wendy-header.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0px;
+    grid-column: 2/ span 5;
+    grid-row: 3 / span 1;
+    height:40vh;
+    color:#fff;
+    margin-top: 5vh;
+  }
+
+  .wrapper2 .box7{
+    background-color:#121413;
+    border-radius: 0px;
+    grid-column: 8/ span 1;
+    grid-row: 3 / span 1;
+    height:30px;
+    color:#fff;
+    margin-top:17vh;
+    margin-right: 60px;
+  }
+
+  .wrapper2 .paragraphe4{
+    grid-column: 8 / span 1;
+    grid-row: 3 / span 1;
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    margin-top:25vh;
+    margin-bottom:20vh;
+  }
+
+  .wrapper2 .box8{
+    border: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 11/ span 1;
+    grid-row: 3 / span 1;
+    height:50vh;
+    color:#fff;
+  }
+
+
+  /*ligne 5 */
+
+  .wrapper2 .paragraphe5{
+    grid-column: 3 / span 5;
+    grid-row: 4 / span 1;
+    font-size: 12px;
+    color: #F5FAFD;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    margin-top:47vh;
+    margin-bottom: 27vh;
+  }
+
+  #h3-paragraphe5{
+    font-size: 18px;
+    color: #E9EFF4;
+    letter-spacing: 0.8px;
+    line-height: 150%;
+    margin-bottom:30px;
+  }
+
+  .wrapper2 .box9{
+    border: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 3/ span 3;
+    grid-row: 4 / span 1;
+    height:6vh;
+    color:#fff;
+    margin-top: 65vh;
+    margin-bottom:15vh;
+  }
+
+  .wrapper2 .box10{
+    grid-column: 5 / span 7;
+    grid-row: 4 / span 1;
+    background-color:#555555;
+    height:8vh;
+    color:#fff;
+    height:30vh;
+    margin-top:8vh;
+  }
+
+
+  /*footer */
+
+
+  #bottom-box-container{
+    grid-row:3 / span 1;
+    margin-top: 65vh;
+    position: relative;
+    margin-bottom: 100px;
+  }
+
+  #bottom-box{
+    height: 350px;
+    background: #131514;
+    box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+    padding-left:7.5vw;
+    padding-top: 9vh;
+  }
+
+  #suivant-bottom{
+    font-family: 'Roboto',sans-serif;
+    color:#fff;
+    font-size: 12px;
+    margin-bottom: 55px;
+    letter-spacing: 0.8pt;
+  }
+
+  #article_suivant{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: #FFFFFF;
+    letter-spacing: 0.44px;
+    }
+
+    #CTA_Lire{
+      color:#4E98F9;
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      color:#4E98F9;
+      border:2px solid #4E98F9;
+      height:44px;
+      width:200px;
+      bottom:0;
+      left:0;
+      position: absolute;
+      box-shadow: 0 0 4px 0 #4E98F9;
+      margin-bottom:9vh;
+      margin-left: 7.8vh;
+      text-decoration:none;
+      align-items: center;
+      display: flex;
+      padding-left:30px;
+      letter-spacing: 0.6px;
+    }
+
+    #CTA_Lire:hover{
+        color:white;
+        font-family: 'Roboto', sans-serif;
+        border:2px solid #4E98F9;
+        height:44px;
+        width:200px;
+        bottom:0;
+        left:0;
+        position: absolute;
+        box-shadow: 0 0 4px 0 #4E98F9;
+        margin-bottom:9vh;
+        margin-left: 7.8vh;
+        text-decoration:none;
+        align-items: center;
+        display: flex;
+        padding-left:30px;
+        background-color: #4E98F9;
+      }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px){
+
+  .wrapper .rectb1{
+    z-index: 33;
+    border-top: 2px solid #4E98F9;
+    border-right: 2px solid #4E98F9;
+    border-bottom: 2px solid #4E98F9;
+    box-shadow: 0 0 4px 0 #4E98F9;
+    border-radius: 0px;
+    grid-column: 1 / span 8;
+    grid-row: 2 / span 3;
+    color:#fff;
+  }
+
+
+
+    /* header */
+
+    .button-teleporter{
+      width:39.9%;
+      background-color:#212123;
+      height:6.1%;
+      position:absolute;
+      right:0;
+      top:0;
+      z-index: 999;
+    }
+
+    .button-teleporter a{
+      position: absolute;
+      font-size: 18px;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      color:#4E98F9;
+      text-decoration: none;
+      font-family: 'VT323', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+      .button-teleporter:hover{
+        background-color: #4E98F9;
+        box-shadow: 0 0 40px 0 #4E98F9;
+      }
+
+      .button-teleporter a:hover{
+        color:#fff;
+      }
+
+    #logo{
+      grid-column: 3 / span 2;
+      margin-top: 65px;
+      margin-bottom: 62px;
+      grid-row: 1 / span 1;
+      z-index: 99;
+    }
+
+    #logo img{
+      max-width:70px;
+    }
+
+    .container{
+      z-index: 99;
+      grid-column: 3 / span 8;
+    }
+
+    #title-container{
+      grid-row: 2 / span 1;
+    }
+
+    #title-box{
+      height: 53vh;
+      background: #131514;
+      box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+    }
+
+    #title-box .placeholder-img{
+      background: url(../img/musique-daftpunk2.jpeg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 55%;
+      width: 78%;
+      height: 76%;
+      right: -27.25%;
+      transform: translateY(-50%);
+      max-width: 80%;
+      box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+      overflow-x: hidden;
+    }
+
+    h1{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      color: #FFFFFF;
+      letter-spacing: 0.44px;
+      padding-left:12vw;
+      padding-top: 8vh;
+      line-height: 140%;
+    }
+
+    #texte-soust{
+      padding-left:9vw;
+      padding-right: 10vw;
+      font-family: 'Montserrat',sans-serif;
+      font-size: 0px;
+      color: #FFFFFF;
+      letter-spacing: 0.5px;
+      line-height: 150%;
+      font-weight: 300;
+      margin-top: 40px;
+    }
+
+
+
+    /*article*/
+
+    article{
+      grid-column: 3 / span 12;
+      grid-row:2 / span 1;
+      z-index:1;
+      background: #212123;
+      font-family: 'Roboto',sans-serif;
+      margin-top:42vh;
+    }
+
+
+
+     /*ligne 1 */
+
+    .paragraphe1{
+      grid-column: 3 / span 6;
+      grid-row: 1 / span 1;
+      font-size: 12px;
+      color: #F5FAFD;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 160%;
+      margin-top:45vh;
+      z-index: 4;
+    }
+
+    #h2-paragraphe1{
+      font-size: 28px;
+      color: #E9EFF4;
+      letter-spacing: 1.05px;
+      line-height: 140%;
+      margin-bottom:40px;
+    }
+
+    .wrapper2 .box1{
+      z-index: 3;
+      border: 2px solid #4E98F9;
+      box-shadow: 0 0 4px 0 #4E98F9;
+      border-radius: 0px;
+      grid-column: 7/ span 2;
+      grid-row: 1 / span 1;
+      height:180px;
+      margin-top: 15vh;
+      color:#fff;
+    }
+
+    .wrapper2 .box2{
+      z-index: 2;
+      background: url(../img/musique-wendy.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 0px;
+      grid-column: 5/ span 3;
+      grid-row: 1 / span 1;
+      height:137px;
+      margin-top: 20vh;
+      color:#fff;
+    }
+
+    /*ligne 2 */
+
+    .wrapper2 .box3{
+      z-index: 5;
+      border: 2px solid #4E98F9;
+      box-shadow: 0 0 4px 0 #4E98F9;
+      border-radius: 0px;
+      grid-column: 3/ span 3;
+      grid-row: 2 / span 1;
+      height:300px;
+      color:#fff;
+    }
+
+    .wrapper2 .box4{
+      z-index: 4;
+      background-color:#121413;
+      border-radius: 0px;
+      grid-column: 3/ span 6;
+      grid-row: 2 / span 1;
+      height:40px;
+      margin-top: 20vh;
+      color:#fff;
+    }
+
+    .wrapper2 .paragraphe2{
+      font-size: 12px;
+      color: #F5FAFD;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 160%;
+      grid-column: 3 / span 6;
+      grid-row: 2 / span 1;
+      margin-top: 45vh;
+    }
+
+    #h3-paragraphe2{
+      font-size: 18px;
+      color: #E9EFF4;
+      letter-spacing: 0.8px;
+      line-height: 150%;
+      margin-bottom:30px;
+    }
+
+
+    /*ligne 3 */
+
+    .wrapper2 .box5{
+      z-index: 5;
+      background: url(../img/musique-daftpunk.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 0px;
+      grid-column: 1/ span 12;
+      grid-row: 2 / span 1;
+      height:30vh;
+      color:#fff;
+    }
+
+    .wrapper2 .paragraphe3{
+      z-index: 6;
+      grid-column: 3 / span 6;
+      grid-row: 2 / span 1;
+      font-size: 12px;
+      color: #F5FAFD;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 160%;
+      margin-top:38vh;
+    }
+
+    #h3-paragraphe3{
+      font-size: 18px;
+      color: #E9EFF4;
+      letter-spacing: 0.8px;
+      line-height: 150%;
+      margin-bottom:30px;
+    }
+
+    /*ligne 4 */
+
+    .wrapper2 .box6{
+      background: url(../img/musique-wendy-header.png) no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 0px;
+      grid-column: 2/ span 8;
+      grid-row: 3 / span 1;
+      height:40vh;
+      color:#fff;
+      margin-top: 5vh;
+      z-index: 9;
+    }
+
+    .wrapper2 .box7{
+      background-color:#121413;
+      border-radius: 0px;
+      grid-column: 2/ span 6;
+      grid-row: 3 / span 1;
+      height:26px;
+      color:#fff;
+      margin-top:55vh;
+      margin-right: 60px;
+    }
+
+    .wrapper2 .paragraphe4{
+      grid-column: 2 / span 7;
+      grid-row: 3 / span 1;
+      font-size: 12px;
+      color: #F5FAFD;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 160%;
+      margin-top:65vh;
+      z-index: 12;
+      margin-bottom: 15vh;
+    }
+
+    .wrapper2 .box8{
+      border: 2px solid #4E98F9;
+      box-shadow: 0 0 4px 0 #4E98F9;
+      border-radius: 0px;
+      grid-column: 8/ span 1;
+      grid-row: 3 / span 1;
+      height:59vh;
+      margin-left:25px;
+      color:#fff;
+      z-index: 8;
+    }
+
+
+    /*ligne 5 */
+
+    .wrapper2 .paragraphe5{
+      grid-column: 2 / span 8;
+      grid-row: 4 / span 1;
+      font-size: 12px;
+      color: #F5FAFD;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 160%;
+      margin-top:18vh;
+      margin-bottom: 27vh;
+      z-index: 13;
+    }
+
+    #h3-paragraphe5{
+      font-size: 18px;
+      color: #E9EFF4;
+      letter-spacing: 0.8px;
+      line-height: 150%;
+      margin-bottom:30px;
+    }
+
+    .wrapper2 .box9{
+      border: 2px solid #4E98F9;
+      box-shadow: 0 0 4px 0 #4E98F9;
+      border-radius: 0px;
+      grid-column: 5/ span 1;
+      grid-row: 4 / span 1;
+      height:8vh;
+      color:#fff;
+      margin-top: 86vh;
+      margin-bottom:15vh;
+    }
+
+    .wrapper2 .box10{
+      grid-column: 1 / span 12;
+      grid-row: 4 / span 1;
+      background-color:#555555;
+      height:8vh;
+      color:#fff;
+      height:30vh;
+      margin-top:47vh;
+    }
+
+
+    /*footer */
+
+    #bottom-box-container{
+      grid-row:3 / span 1;
+      margin-top: 35vh;
+      position: relative;
+    }
+
+    #bottom-box{
+      height: 250px;
+      background: #131514;
+      box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+      margin-bottom: 70px;
+      padding-left:9vw;
+      padding-top: 7vh;
+    }
+
+    #suivant-bottom{
+      font-family: 'Roboto',sans-serif;
+      color:#fff;
+      font-size: 12px;
+      margin-bottom: 35px;
+      letter-spacing: 0.8pt;
+    }
+
+    a{
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: #FFFFFF;
+      letter-spacing: 0.44px;
+    }
+
+    #CTA_Lire{
+      color:#4E98F9;
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      color:#4E98F9;
+      border:2px solid #4E98F9;
+      height:44px;
+      width:200px;
+      bottom:0;
+      left:0;
+      position: relative;
+      box-shadow: 0 0 4px 0 #4E98F9;
+      margin-top:34px;
+      text-decoration:none;
+      align-items: center;
+      display: flex;
+      padding-left:30px;
+      letter-spacing: 0.6px;
+    }
+
+    #CTA_Lire:hover{
+        color:white;
+        font-family: 'Roboto', sans-serif;
+        border:2px solid #4E98F9;
+        height:44px;
+        width:200px;
+        bottom:0;
+        left:0;
+        box-shadow: 0 0 4px 0 #4E98F9;
+        text-decoration:none;
+        align-items: center;
+        display: flex;
+        padding-left:30px;
+        background-color: #4E98F9;
+      }
+  }

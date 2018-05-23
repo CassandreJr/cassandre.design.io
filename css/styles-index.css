@@ -1,0 +1,889 @@
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+  overflow: hidden;
+  height: 100%;
+  /*pour enlever le "rebond" au scroll*/
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+  height: 100%;
+  background-color: #212123;
+  position:relative;
+}
+
+.loader {
+  transition: .2s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 1000;
+  opacity: 1;
+}
+.loader--hide {
+  opacity: 0;
+}
+.loader__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  left: 25%;
+  width: 75%;
+  height: 100vh;
+}
+.loader__content {
+  color: #4D94F2;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  font-family:'VT323', monospace;
+  font-size: 24px;
+}
+
+.wrapper {
+  display: grid;
+  height:100%;
+  grid-template-columns: 3.125% 3.125% 6.25% 4.375% 3.125% 5% 15% 10% 10% 15% 5% 3.125% 4.375% 6.25% 3.125% 3.125%;
+  grid-template-rows: 6.1% 18.9% 8.3% 16.7% 16.7% 8.3% 18.9% 6.1%;
+
+}
+
+/*grille de fond */
+
+  #grilledefond{
+    z-index: 1;
+    position: absolute;
+    width:100%;
+  }
+
+  .box {
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+
+  /**** BG GRID ****/
+
+  #bg_grid {
+    top: 0;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    }
+
+  #bg_grid .box {
+      color: #fff;
+      font-family: sans-serif;
+      text-align: center;
+      border-right: 1px solid white;
+      border-bottom: 1px solid white;
+    }
+  #bg_grid .box16{
+    border-right:none;
+    }
+  #bg_grid .boxbot{
+    border-bottom:none;
+    }
+
+
+  /*** IMG SLIDER ***/
+
+  .slide{
+    position: relative;
+    z-index: 10;
+  }
+
+  .text{
+    position:relative;
+    z-index:50;
+  }
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 960px){
+
+
+    /*** BOUTON ***/
+
+    .button-test{
+      width:16.875%;
+      background-color:#131514;
+      height:6.1%;
+      position:absolute;
+      right:0;
+      top:0;
+      z-index: 999;
+    }
+
+    .button-test:hover{
+      background-color: #4E98F9;
+      box-shadow: 0 0 40px 0 #4E98F9;
+    }
+
+    .button-test a{
+      position: absolute;
+      font-size: 18px;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      font-family: 'VT323', monospace;
+      text-transform: uppercase;
+      text-decoration: none;
+      color:#fff;
+    }
+
+    #grilledefond .box1{
+      border-top: 2px solid #4E98F9;
+      border-right: 2px solid #4E98F9;
+      border-bottom: 2px solid #4E98F9;
+      border-left: 0px;
+      box-shadow: 0 0 4px 0 #4E98F9;
+      border-radius: 0px;
+      grid-column: 1 / span 8;
+      grid-row: 2 / span 2;
+    }
+
+    #grilledefond .box2{
+      background-color:#131514;
+      grid-column: 1 / span 5;
+      grid-row: 7 / span 1;
+    }
+
+    #grilledefond .box3{
+      border-radius: 0px;
+      grid-column: 15 / span 2;
+      grid-row: 3 / span 5;
+      border-top: 2px solid #4E98F9;
+      border-left: 2px solid #4E98F9;
+      border-bottom: 2px solid #4E98F9;
+      border-right: 0px;
+      box-shadow: 0 0 4px 0 #4E98F9;
+    }
+
+    #grilledefond .box4{
+      border-top: 2px solid #4E98F9;
+      box-shadow: 0 -4px 4px -3px #4E98F9;
+      border-radius: 0px;
+      grid-column: 11 / span 1;
+      grid-row: 2 / span 1;
+    }
+
+
+    #grilledefond .box5{
+      border-top: 2px solid #4E98F9;
+      border-radius: 0px;
+      grid-column: 11 / span 1;
+      grid-row: 8 / span 1;
+      box-shadow: 0 -4px 4px -3px #4E98F9;
+    }
+
+    /* slider */
+
+    #app{
+      z-index: 2;
+      overflow:hidden;
+      position:absolute;
+    }
+
+    .container_slider{
+      width:100vw;
+      height:50vh;
+      margin-top: 25vh;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slider{
+      height:100%;
+      display:flex;
+      justify-content: center;
+
+      /*temps de transition: */
+      transition: 1s transform ease;
+    }
+
+    .slider.is_resizing {
+      transition: none !important;
+    }
+    .slide{
+      width:60vw;
+      margin:0 auto;
+      padding-left:9vw;
+      padding-top: 12vh;
+      padding-right: 10vw;
+    }
+
+    .slide .placeholder-img1{
+      background: url(../img/film-tron-classic-poster.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 50%;
+      width: 65%;
+      height: 70%;
+      right: -5.25%;
+      transform: translateY(-50%);
+      max-width: 65%;
+      box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+      overflow-x: hidden;
+    }
+
+    .slide .placeholder-img2{
+      background: url(../img/musique-wendy-header.png) no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 50%;
+      width: 65%;
+      height: 70%;
+      right: -5.25%;
+      transform: translateY(-50%);
+      max-width: 65%;
+      box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+      overflow-x: hidden;
+    }
+
+    .slide .placeholder-img3{
+      background: url(../img/art2.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 50%;
+      width: 65%;
+      height: 70%;
+      right: -5.25%;
+      transform: translateY(-50%);
+      max-width: 65%;
+      box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+      overflow-x: hidden;
+    }
+
+    #title{
+      color: #FFFFFF;
+    }
+
+    .text a{
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      letter-spacing: 0.44px;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    p{
+      font-family: 'Montserrat',sans-serif;
+      font-size: 14px;
+      color: #FFFFFF;
+      letter-spacing: 0.5px;
+      line-height: 150%;
+      font-weight: 300;
+      margin-top: 40px;
+    }
+
+
+    #section1{
+      background: #131514;
+      box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+    }
+
+    #section2{
+      background: #131514;
+      box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+    }
+
+    #section3{
+      background: #131514;
+      box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+    }
+
+
+
+    /*nav*/
+
+    #header{
+      z-index: 3;
+      margin-left: 6.25%;
+      margin-top: 7%;
+    }
+
+    #navigation{
+      z-index: 9;
+      position: absolute;
+      width:20%;
+      left:3.125%;
+      bottom:12%;
+    }
+
+    .nav{
+      display: inline-block;
+      font-size: 12px;
+      transition:.2s color, 2s transform;
+      color:#4E98F9;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.44px;
+      margin-bottom: 10px;
+    }
+
+    .nav.active{
+      color:#fff;
+      transition: color 2s ease, 2s transform;;
+      transform: scale(4);
+    }
+
+    ul{
+      display: inline-block;
+    }
+
+    li{
+      display: inline;
+    }
+
+    #chiffre-menu1{
+      margin-left:2%;
+    }
+
+    #chiffre-menu2{
+      margin-left:3.125vw;
+    }
+
+    #chiffre-menu3{
+      margin-left:4.5vw;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:959px) and (min-width:481px){
+
+
+      /*** BOUTON ***/
+
+      .button-test{
+        width:20%;
+        background-color:#131514;
+        height:6.1%;
+        position:absolute;
+        right:0;
+        top:0;
+        z-index: 999;
+      }
+
+      .button-test:hover{
+        background-color: #4E98F9;
+        box-shadow: 0 0 40px 0 #4E98F9;
+      }
+
+      .button-test a{
+        position: absolute;
+        font-size: 18px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        font-family: 'VT323', monospace;
+        text-transform: uppercase;
+        text-decoration: none;
+        color:#fff;
+      }
+
+      #grilledefond .box1{
+        border-top: 2px solid #4E98F9;
+        border-right: 2px solid #4E98F9;
+        border-bottom: 2px solid #4E98F9;
+        border-left: 0px;
+        box-shadow: 0 0 4px 0 #4E98F9;
+        border-radius: 0px;
+        grid-column: 1 / span 8;
+        grid-row: 2 / span 1;
+      }
+
+      #grilledefond .box2{
+        background-color:#131514;
+        grid-column: 1 / span 5;
+        grid-row: 7 / span end;
+      }
+
+      #grilledefond .box3{
+        border-radius: 0px;
+        grid-column: 14 / span 3;
+        grid-row: 3 / span 5;
+        border-top: 2px solid #4E98F9;
+        border-left: 2px solid #4E98F9;
+        border-bottom: 2px solid #4E98F9;
+        border-right: 0px;
+        box-shadow: 0 0 4px 0 #4E98F9;
+      }
+
+      /* slider */
+
+      #app{
+        z-index: 2;
+        overflow:hidden;
+        position:absolute;
+      }
+
+      .container_slider{
+        width:100vw;
+        height:55vh;
+        margin-top: 20vh;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .slider{
+        height:100%;
+        display:flex;
+        justify-content: center;
+
+        /*temps de transition: */
+        transition: 1s transform ease;
+      }
+      .slider.is_resizing {
+        transition: none;
+      }
+      .slide{
+        width:60vw;
+        margin:0 auto;
+        padding-left:9vw;
+        padding-top: 12vh;
+        padding-right: 10vw;
+      }
+
+      .slide .placeholder-img1{
+        background: url(../img/film-tron-classic-poster.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 50%;
+        width: 53%;
+        height: 86%;
+        right: -5.25%;
+        transform: translateY(-50%);
+        max-width: 65%;
+        box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+        overflow-x: hidden;
+      }
+
+      .slide .placeholder-img2{
+        background: url(../img/musique-wendy-header.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 50%;
+        width: 53%;
+        height: 86%;
+        right: -5.25%;
+        transform: translateY(-50%);
+        max-width: 65%;
+        box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+        overflow-x: hidden;
+      }
+
+      .slide .placeholder-img3{
+        background: url(../img/art2.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 50%;
+        width: 53%;
+        height: 86%;
+        right: -5.25%;
+        transform: translateY(-50%);
+        max-width: 65%;
+        box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+        overflow-x: hidden;
+      }
+
+      #title{
+        color: #FFFFFF;
+      }
+
+      a{
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        letter-spacing: 0.44px;
+        margin-bottom: 10px;
+        color: #FFFFFF;
+      }
+
+      p{
+        font-family: 'Montserrat',sans-serif;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0.5px;
+        line-height: 150%;
+        font-weight: 300;
+        margin-top: 40px;
+        padding-right:100px;
+      }
+
+
+      #section1{
+        background: #131514;
+        box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+      }
+
+      #section2{
+        background: #131514;
+        box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+      }
+
+      #section3{
+        background: #131514;
+        box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+      }
+
+
+
+      /*nav*/
+
+      #header{
+        z-index: 3;
+        margin-left: 6.25%;
+        margin-top: 13%;
+      }
+
+      #navigation{
+        z-index: 9;
+        position: absolute;
+        width:20%;
+        left:3.125%;
+        bottom:12%;
+      }
+
+      .nav{
+        display: inline-block;
+        font-size: 12px;
+        transition:.2s color, 2s transform;
+        color:#4E98F9;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.44px;
+        margin-bottom: 10px;
+      }
+
+      .nav.active{
+        color:#fff;
+        transition: color 2s ease, 2s transform;;
+        transform: scale(4);
+      }
+
+      ul{
+        display: inline-block;
+      }
+
+      li{
+        display: inline;
+      }
+
+      #chiffre-menu1{
+        margin-left:2vw;
+      }
+
+      #chiffre-menu2{
+        margin-left:3.125vw;
+      }
+
+      #chiffre-menu3{
+        margin-left:4.5vw;
+      }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+@media screen and (max-width:669px) and (min-width:482px){
+
+  .text p {
+    display:none;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px){
+
+
+        /*** BOUTON ***/
+
+        .button-test{
+          width:20%;
+          background-color:#131514;
+          height:6.1%;
+          position:absolute;
+          right:0;
+          top:0;
+          z-index: 999;
+        }
+
+        .button-test:hover{
+          background-color: #4E98F9;
+          box-shadow: 0 0 40px 0 #4E98F9;
+        }
+
+        .button-test a{
+          position: absolute;
+          font-size: 12px;
+          top:50%;
+          left:50%;
+          transform: translate(-50%,-50%);
+          font-family: 'VT323', monospace;
+          text-transform: uppercase;
+          text-decoration: none;
+          color:#fff;
+        }
+
+        #grilledefond .box1{
+          border-top: 2px solid #4E98F9;
+          border-right: 2px solid #4E98F9;
+          border-bottom: 2px solid #4E98F9;
+          border-left: 0px;
+          box-shadow: 0 0 4px 0 #4E98F9;
+          border-radius: 0px;
+          grid-column: 1 / span 8;
+          grid-row: 2 / span 3;
+        }
+
+        #grilledefond .box2{
+          background-color:#131514;
+          grid-column: 1 / span 2;
+          grid-row: 7 / span end;
+        }
+
+        #grilledefond .box3{
+          border-radius: 0px;
+          grid-column: 10 / span 8;
+          grid-row: 5 / span 3;
+          border-top: 2px solid #4E98F9;
+          border-left: 2px solid #4E98F9;
+          border-bottom: 2px solid #4E98F9;
+          border-right: 0px;
+          box-shadow: 0 0 4px 0 #4E98F9;
+        }
+
+        /* slider */
+
+        #app{
+          z-index: 2;
+          overflow:hidden;
+          position:absolute;
+        }
+
+        .container_slider{
+          width:100vw;
+          height:55vh;
+          margin-top: 20vh;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .slider{
+          height:100%;
+          display:flex;
+          justify-content: center;
+
+          /*temps de transition: */
+          transition: 1s transform ease;
+        }
+
+        .slide{
+          width:60vw;
+          margin:0 auto;
+          padding-left:9vw;
+          padding-top: 12vh;
+          padding-right: 10vw;
+        }
+
+        .slide .placeholder-img1{
+          background: url(../img/film-tron-classic-poster.jpg) no-repeat;
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 50%;
+          width: 65%;
+          height: 70%;
+          right: -5.25%;
+          transform: translateY(-50%);
+          max-width: 65%;
+          box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+          overflow-x: hidden;
+        }
+
+        .slide .placeholder-img2{
+          background: url(../img/musique-wendy-header.png) no-repeat;
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 50%;
+          width: 53%;
+          height: 86%;
+          right: -5.25%;
+          transform: translateY(-50%);
+          max-width: 65%;
+          box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+          overflow-x: hidden;
+        }
+
+        .slide .placeholder-img3{
+          background: url(../img/art2.jpg) no-repeat;
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 50%;
+          width: 53%;
+          height: 86%;
+          right: -5.25%;
+          transform: translateY(-50%);
+          max-width: 65%;
+          box-shadow: 1px 1px 35px 0 rgba(0,0,0,0.24);
+          overflow-x: hidden;
+        }
+
+        #title{
+          color: #FFFFFF;
+        }
+
+        a{
+          text-decoration: none;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+          font-size: 36px;
+          letter-spacing: 0.44px;
+          margin-bottom: 20px;
+          color: #FFFFFF;
+          line-height: 150%;
+        }
+
+        p{
+          font-family: 'Montserrat',sans-serif;
+          font-size: 0px;
+          color: #FFFFFF;
+          letter-spacing: 0.5px;
+          line-height: 150%;
+          font-weight: 300;
+        }
+
+
+        #section1{
+          background: #131514;
+          box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+        }
+
+        #section2{
+          background: #131514;
+          box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+        }
+
+        #section3{
+          background: #131514;
+          box-shadow: 5px 5px 53px 0 rgba(0,0,0,0.46);
+        }
+
+
+
+        /*nav*/
+
+        #header{
+          z-index: 3;
+          margin-left: 6.25%;
+          margin-top: 20%;
+        }
+
+        #logo img{
+          max-width:70px;
+        }
+
+        #navigation{
+          z-index: 9;
+          position: absolute;
+          width:20%;
+          left:3.125%;
+          bottom:12%;
+        }
+
+        .nav{
+          display: inline-block;
+          font-size: 12px;
+          transition:.2s color, 2s transform;
+          color:#4E98F9;
+        }
+
+        .nav.active{
+          color:#fff;
+          transition: color 2s ease, 2s transform;;
+          transform: scale(4);
+        }
+
+        ul{
+          display: inline-block;
+        }
+
+        li{
+          display: inline;
+        }
+
+        #chiffre-menu1{
+          margin-left:5.125vw;
+        }
+
+        #chiffre-menu2{
+          margin-left:3.125vw;
+        }
+
+        #chiffre-menu3{
+          margin-left:4.5vw;
+        }
+
+
+}
